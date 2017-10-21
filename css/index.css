@@ -1,0 +1,24 @@
+
+/* index.css
+ * Author: silence 
+ * Email: lixuelan1007@126.com
+*/
+
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family:"simsun";
+	font-size:12px;
+}
+
+.author{
+	position: absolute;
+	left: 10%;
+	bottom: 10%;
+}
+.describe{
+	margin: 50px 0;
+	color: #ccc;
+}

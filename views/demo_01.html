@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> input框宽度自适应 </title>
+  <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <style>
+        
+        #inputThis{margin:50px 100px;}
+        /*input{border:0 none;border-bottom: 1px dashed #78639F;}*/
+        .input-txt{width:50px;height:24px;padding:0 2px;font-size:12px;font-family:"simsun";} 
+        .box{position:absolute;top:-1000px;left:-1000px;}
+    </style>
+ </head>
+
+ <body>
+<div id="inputThis">
+
+	<from>
+		<label>内容：</label> 
+		<input type="text" id="txt" class="input-txt" placeholder="input">
+		<div class="box" id="box"></div>
+	</form>
+    <p class="describe">描述：根据输入的字符长度 input框的宽度自动变化</p>
+    <p class="author">by:silence</p>
+	
+</div>
+
+<script>   
+    var iTxt = document.getElementById("txt");
+    var iBox = document.getElementById("box");
+     
+    function handle(){
+        iBox.innerHTML = iTxt.value;
+        var a = iBox.offsetWidth;
+        if(a>50){
+            iTxt.style.width = a + 10 + "px";
+        }else{
+            iTxt.style.width = "50px";
+        }
+    }
+    if(/msie/i.test(navigator.userAgent)){ //ie浏览器
+        iTxt.onpropertychange=handle;
+    }else{  //其他浏览器
+        iTxt.addEventListener("input",handle,false);
+    }
+ 
+</script>
+ </body>
+</html>
